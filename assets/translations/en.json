@@ -1,32 +1,32 @@
 {
-    "name": "Aladdine Abdou",
-    "description": "Software Imagineer",
+    "name": "Masnun Siam",
+    "description": "Software Engineer",
     "subDescription": "Flutter Enthusiast",
     "contacts": [
         {
             "tooltip": "LinkedIn",
-            "url": "https://www.linkedin.com/in/aladdine-abdou/",
+            "url": "https://www.linkedin.com/in/msiamn/",
             "iconCodePoint": "0xf08c",
             "iconFontFamily": "FontAwesomeBrands",
             "iconFontPackage": "font_awesome_flutter"
         },
         {
             "tooltip": "Github",
-            "url": "https://github.com/Aaldn",
+            "url": "https://github.com/masnun-siam",
             "iconCodePoint": "0xf09b",
             "iconFontFamily": "FontAwesomeBrands",
             "iconFontPackage": "font_awesome_flutter"
         },
         {
-            "tooltip": "aladdine.abdou@gmail.com",
-            "url": "mailto:aladdine.abdou@gmail.com",
+            "tooltip": "contact@msiamn.dev",
+            "url": "mailto:contact@msiamn.dev",
             "iconCodePoint": "0xf0e0",
             "iconFontFamily": "FontAwesomeSolid",
             "iconFontPackage": "font_awesome_flutter"
         },
         {
-            "tooltip": "+33 7 82 54 34 70",
-            "url": "tel:+33782543470",
+            "tooltip": "+880 1747 705862",
+            "url": "tel:+8801747705862",
             "iconCodePoint": "0xf095",
             "iconFontFamily": "FontAwesomeSolid",
             "iconFontPackage": "font_awesome_flutter"
@@ -35,14 +35,10 @@
     "resumes": [
         {
             "languageCode": "en",
-            "url": "https://drive.google.com/file/d/1pVg6EjpZvixMcOkgRMGrhrkmAeIaSn3t/view?usp=sharing"
-        },
-        {
-            "languageCode": "fr",
-            "url": "https://drive.google.com/file/d/13t62MynE9GavlyrtHNM1ShdkdJT0bc0B/view?usp=sharing"
+            "url": "https://drive.google.com/file/d/1XGtissjcy2Cs26-Pdsyp8xI99uWyCcDq/view?usp=sharing"
         }
     ],
-    "aboutDescription": "Hello! I'm Aladdine, an apprentice developer and third-year student at ESGI Paris, specializing in mobile and IoT development. Passionate about the mobile ecosystem, I combine my studies with my practical expericence to build intuitive and feature-rich applications.\nI aspire to put my skills to work on inspiring and challenging projects.",
+    "aboutDescription": "Hello! I'm Masnun Siam, an apprentice developer and third-year student at ESGI Paris, specializing in mobile and IoT development. Passionate about the mobile ecosystem, I combine my studies with my practical expericence to build intuitive and feature-rich applications.\nI aspire to put my skills to work on inspiring and challenging projects.",
     "experiences": [
         {
             "job": "Mobile Developer",
@@ -206,8 +202,8 @@
     ],
     "credit": {
         "message": "Inspired by",
-        "to": "Aladdine Abdou",
-        "url": "https://aladdine.dev"
+        "to": "Masnun Siam",
+        "url": "https://msiamn.dev"
     },
     "portfolio": "Portfolio",
     "homeSectionTitle": "Home",
