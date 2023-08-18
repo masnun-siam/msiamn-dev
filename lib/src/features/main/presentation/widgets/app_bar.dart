@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/src/common/widgets/responsive.dart';
 import 'package:portfolio/src/constants/sizes.dart';
 import 'package:portfolio/src/features/main/presentation/widgets/app_bar_button.dart';
@@ -24,7 +23,8 @@ class MyAppBar extends ConsumerWidget {
           ),
       title: Row(
         children: [
-          const Icon(FontAwesomeIcons.terminal),
+          // const Icon(FontAwesomeIcons.terminal),
+          Image.asset('assets/images/logo.png', height: 28, width: 28),
           const SizedBox(width: 12),
           Text(tr(LocaleKeys.portfolio)),
         ],
