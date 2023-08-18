@@ -2,16 +2,15 @@
 
 # Portfolio 💙 [![Licence](https://img.shields.io/github/license/Aaldn/portfolio?color=a51931&style=flat-square)](https://github.com/Aaldn/portfolio/blob/master/LICENSE.md) ![Stars](https://img.shields.io/github/stars/Aaldn/portfolio?style=flat-square) ![Forks](https://img.shields.io/github/forks/Aaldn/portfolio?style=flat-square)
 
-Flutter Portfolio – by [@Aaldn](https://github.com/Aaldn)
+Flutter Portfolio – by [Masnun Siam](https://github.com/masnun-siam)
 
 [![Flutter 3](https://img.shields.io/badge/Flutter-3.10-02569b.svg?style=flat-square&logo=flutter&logoColor=13b9fd)](https://flutter.dev/)
 [![Dart 3](https://img.shields.io/badge/Dart-3.0-0175c2.svg?style=flat-square&logo=dart&logoColor=13b9fd)](https://dart.dev/)
 [![Firebase](https://img.shields.io/badge/Firebase--ffcc30.svg?style=flat-square&logo=firebase)](https://firebase.google.com/)
 
-## [Live Preview](https://aladdine.dev) 👀
+## [Live Preview](https://msiamn.dev) 👀
 
-<img src="assets/screenshots/mockups-1.png">
-<img src="assets/screenshots/mockups-2.png">
+<img src="assets/screenshots/screenshot.png">
 
 ## Features ✨
 
