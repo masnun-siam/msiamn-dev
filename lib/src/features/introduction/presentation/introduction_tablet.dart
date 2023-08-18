@@ -5,7 +5,6 @@ import 'package:portfolio/src/constants/sizes.dart';
 import 'package:portfolio/src/features/introduction/domain/contact.dart';
 import 'package:portfolio/src/features/introduction/domain/resume.dart';
 import 'package:portfolio/src/features/introduction/presentation/widgets/contact_bar.dart';
-import 'package:portfolio/src/features/introduction/presentation/widgets/favorite_icon.dart';
 import 'package:portfolio/src/features/introduction/presentation/widgets/magic_icon.dart';
 import 'package:portfolio/src/features/introduction/presentation/widgets/resume_button.dart';
 import 'package:portfolio/src/localization/generated/locale_keys.g.dart';
