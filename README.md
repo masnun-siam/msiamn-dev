@@ -10,7 +10,7 @@ Flutter Portfolio – by [Masnun Siam](https://github.com/masnun-siam)
 
 ## [Live Preview](https://msiamn.dev) 👀
 
-<img src="assets/screenshots/screenshot.png">
+<img src="assets/screenshots/screenshot.jpg">
 
 ## Features ✨
 
