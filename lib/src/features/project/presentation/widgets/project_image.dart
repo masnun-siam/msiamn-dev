@@ -63,26 +63,26 @@ class ProjectImage extends ConsumerWidget {
             ),
           ),
         ),
-        Positioned(
-          bottom: 20,
-          right: 20,
-          child: SizedBox.square(
-            dimension: 32,
-            child: AnimatedCrossFade(
-              alignment: Alignment.center,
-              firstCurve: Curves.decelerate,
-              secondCurve: Curves.decelerate,
-              sizeCurve: Curves.decelerate,
-              crossFadeState: isHovered
-                  ? CrossFadeState.showSecond
-                  : CrossFadeState.showFirst,
-              duration: const Duration(seconds: 1),
-              reverseDuration: const Duration(milliseconds: 500),
-              firstChild: const SizedBox.shrink(),
-              secondChild: _buildIcon(),
-            ),
-          ),
-        ),
+        // Positioned(
+        //   bottom: 20,
+        //   right: 20,
+        //   child: SizedBox.square(
+        //     dimension: 32,
+        //     child: AnimatedCrossFade(
+        //       alignment: Alignment.center,
+        //       firstCurve: Curves.decelerate,
+        //       secondCurve: Curves.decelerate,
+        //       sizeCurve: Curves.decelerate,
+        //       crossFadeState: isHovered
+        //           ? CrossFadeState.showSecond
+        //           : CrossFadeState.showFirst,
+        //       duration: const Duration(seconds: 1),
+        //       reverseDuration: const Duration(milliseconds: 500),
+        //       firstChild: const SizedBox.shrink(),
+        //       secondChild: _buildIcon(),
+        //     ),
+        //   ),
+        // ),
       ],
     );
   }
@@ -103,29 +103,5 @@ class ProjectImage extends ConsumerWidget {
         return child;
       },
     );
-  }
-
-  Widget _buildIcon() {
-    final projectIconCodePoint = project.iconCodePoint;
-    final projectIconFontFamily = project.iconFontFamily;
-    final projectIconFontPackage = project.iconFontPackage;
-    if (projectIconCodePoint != null &&
-        projectIconFontFamily != null &&
-        projectIconFontPackage != null) {
-      final projectIconCodePointHexa = int.tryParse(projectIconCodePoint);
-      if (projectIconCodePointHexa != null) {
-        final iconData = IconData(
-          projectIconCodePointHexa,
-          fontFamily: projectIconFontFamily,
-          fontPackage: projectIconFontPackage,
-        );
-        return Icon(
-          color: Colors.white,
-          size: 32,
-          iconData,
-        );
-      }
-    }
-    return const SizedBox.shrink();
   }
 }
