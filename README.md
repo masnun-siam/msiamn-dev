@@ -1,4 +1,4 @@
-<img src="web/favicon.png" align="right" width="60px"/>
+<img src="web/favicon.png" align="right" width="30px"/>
 
 # Portfolio 💙 [![Licence](https://img.shields.io/github/license/masnun-siam/msiamn-dev?color=a51931&style=flat-square)](https://github.com/masnun-siam/msiamn-dev/blob/master/LICENSE.md) ![Stars](https://img.shields.io/github/stars/masnun-siam/msiamn-dev?style=flat-square) ![Forks](https://img.shields.io/github/forks/masnun-siam/msiamn-dev?style=flat-square)
 
