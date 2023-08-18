@@ -10,6 +10,7 @@ import 'package:portfolio/src/features/main/provider/section_key_provider.dart';
 import 'package:portfolio/src/common/widgets/responsive.dart';
 import 'package:portfolio/src/localization/generated/locale_keys.g.dart';
 import 'package:portfolio/src/localization/json_list_translation.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class EndDrawer extends ConsumerWidget {
   const EndDrawer({super.key});
@@ -65,7 +66,11 @@ class EndDrawer extends ConsumerWidget {
                       sectionKey: ref.watch(projectSectionKeyProvider),
                     ),
                     gapH80,
-                    _buildLocaleButton(context),
+                    MyDrawerButton(
+                      title: 'Blog',
+                      sectionKey: ref.watch(projectSectionKeyProvider),
+                      onTap: () => launchUrlString('https://blog.msiamn.dev'),
+                    ),
                     gapH40,
                   ],
                 ),

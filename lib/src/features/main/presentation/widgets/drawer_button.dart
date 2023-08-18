@@ -6,10 +6,12 @@ class MyDrawerButton extends ConsumerStatefulWidget {
     super.key,
     required this.title,
     required this.sectionKey,
+    this.onTap,
   });
 
   final String title;
   final GlobalKey sectionKey;
+  final VoidCallback? onTap;
 
   @override
   ConsumerState<MyDrawerButton> createState() => MyDrawerButtonsState();
@@ -41,7 +43,7 @@ class MyDrawerButtonsState extends ConsumerState<MyDrawerButton> {
         });
       },
       child: GestureDetector(
-        onTap: () => _onTap(context),
+        onTap: widget.onTap ?? () => _onTap(context),
         child: Text(
           widget.title,
           style: titleStyle,
