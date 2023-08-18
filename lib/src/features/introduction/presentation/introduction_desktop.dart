@@ -42,17 +42,6 @@ class IntroductionDesktop extends ConsumerWidget {
             const MagicIcon(),
           ],
         ),
-        gapH8,
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              "${tr(LocaleKeys.subDescription)} ",
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
-            const FavoriteIcon(),
-          ],
-        ),
         _buildResumeButton(ref, resumes: resumes.toList()),
         const Spacer(),
         gapH8,

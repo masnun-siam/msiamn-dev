@@ -1,7 +1,6 @@
 {
   "name": "Masnun Siam",
-  "description": "Software Engineer",
-  "subDescription": "Flutter Enthusiast",
+  "description": "Flutter Developer",
   "contacts": [
     {
       "tooltip": "LinkedIn",
@@ -43,7 +42,7 @@
     {
       "job": "Flutter Developer",
       "company": "Binary Fusion",
-      "description": "Development of an offline-first mobile snagging application for Disneyland Paris, streamlining information gathering for technical experts in the field and enhancing communication with maintenance services for problem-solving.",
+      "description": "At Binary Fusion, I held a significant role in maintaining and optimizing large-scale applications, collaborating seamlessly within a team. As a key contributor, I played a vital part in ensuring the smooth operation of intricate cross-platform apps, including the implementation of critical Firebase services for enhanced functionality. Moreover, I successfully managed the deployment of these applications to both the App Store and Google Play Store, highlighting my capacity to see projects through to completion. This experience underscored my aptitude for teamwork and showcased my expertise in efficiently managing and enhancing complex app ecosystems.",
       "isPresent": true,
       "startYear": 2023,
       "endYear": 2023,
@@ -53,13 +52,16 @@
         "Firebase",
         "Stripe",
         "Pusher",
-        "SQLite"
+        "SQLite",
+        "Git",
+        "Slack",
+        "YouTrack"
       ]
     },
     {
       "job": "Junior Flutter Developer",
       "company": "Roxarth Manhattan",
-      "description": "Development of a Progressive Web App for security systems technicians, that allows them to generate comprehensive quotes in PDF format including photos. This enables immediate delivery of quotes to customers after the visit.",
+      "description": "As the sole app developer at Roxarth Manhattan, I played a pivotal role in the creation and maintenance of cross-platform applications. My responsibilities encompassed UI/UX design, REST API integration, deployment on app stores, and even venturing into blockchain and Ethereum network exploration for decentralized applications. This experience underscored my proficiency in delivering end-to-end solutions and my ability to adapt and excel in a dynamic environment.",
       "startYear": 2020,
       "startMonth": 11,
       "endYear": 2023,
@@ -76,7 +78,9 @@
         "BrainTree",
         "Solidity",
         "Web3",
-        "AR"
+        "AR",
+        "Git"
+
       ]
     }
   ],
@@ -85,11 +89,11 @@
     {
       "name": "Portfolio",
       "description": "Yes, it's THIS portfolio! \nThis project follows a Riverpod-based Architecture, using a feature-first approach for its structure. It is fully responsive, and supports multiple themes.",
-      "url": "https://github.com/masnun-siam/portfolio#readme",
+      "url": "https://github.com/masnun-siam/msiamn-dev#readme",
       "iconCodePoint": "0xf09b",
       "iconFontFamily": "FontAwesomeBrands",
       "iconFontPackage": "font_awesome_flutter",
-      "screenshotUrl": "https://raw.githubusercontent.com/masnun-siam/portfolio/main/assets/screenshots/web-light.png",
+      "screenshotUrl": "https://raw.githubusercontent.com/masnun-siam/msiamn-dev/main/assets/screenshots/screenshot.jpg",
       "technologies": ["Flutter", "Dart", "Firebase"],
       "links": [
         {
@@ -105,7 +109,7 @@
       "iconCodePoint": "0xf09b",
       "iconFontFamily": "FontAwesomeBrands",
       "iconFontPackage": "font_awesome_flutter",
-      "screenshotUrl": "https://play-lh.googleusercontent.com/UQwYYQvfbRPZfgOXysgB_X02Fwg-bQD73x3mDu2RrRRlrvodDkzVk5vxIXfsPVxdgSO0=w832-h470-rw",
+      "screenshotUrl": "https://raw.githubusercontent.com/masnun-siam/msiamn-dev/main/assets/screenshots/project1.jpg",
       "technologies": ["Flutter", "Firebase", "Stripe", "Push Notification"]
     },
     {
@@ -115,8 +119,8 @@
       "iconCodePoint": "0xf09b",
       "iconFontFamily": "FontAwesomeBrands",
       "iconFontPackage": "font_awesome_flutter",
-      "screenshotUrl": "https://play-lh.googleusercontent.com/8SNeNWVf1sr4u4NO36NjmT4lOmHYq8r_alKusy4Av_w7CrOzXh-KxL8o7fc6Luo9PlM=w5120-h2880-rw",
-      "technologies": ["Flutter", "Dart"]
+      "screenshotUrl": "https://raw.githubusercontent.com/masnun-siam/msiamn-dev/main/assets/screenshots/project2.jpg",
+      "technologies": ["Flutter", "Dart", "API Integration"]
     }
   ],
   "languages": [
