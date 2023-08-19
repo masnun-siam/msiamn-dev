@@ -17,7 +17,7 @@
       "iconFontPackage": "font_awesome_flutter"
     },
     {
-      "tooltip": "contact@msiamn.dev",
+      "tooltip": "echo@msiamn.dev",
       "url": "mailto:echo@msiamn.dev",
       "iconCodePoint": "0xf0e0",
       "iconFontFamily": "FontAwesomeSolid",
@@ -80,7 +80,6 @@
         "Web3",
         "AR",
         "Git"
-
       ]
     }
   ],
