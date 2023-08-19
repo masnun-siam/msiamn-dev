@@ -24,6 +24,11 @@ Flutter Portfolio – by [Masnun Siam](https://github.com/masnun-siam)
 
 Fork and clone this repository (see how to [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository) and [clone](https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository) a repo) 
 
+**Clone the repo in portfolio directory :**
+```bash
+$ git clone https://github.com/masnun-siam/msiamn-dev.git portfolio
+```
+
 **Navigate to your portfolio directory :**
 ```bash
 $ cd portfolio
