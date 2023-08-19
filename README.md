@@ -144,4 +144,4 @@ You are ready to [re-deploy your custom portfolio](#deploy)!
 
 ## License 📄
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/Aaldn/portfolio/blob/main/LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/masnun-siam/msiamn-dev/blob/main/LICENSE.md) file for details
