@@ -65,7 +65,7 @@ class EndDrawer extends ConsumerWidget {
                       title: tr(LocaleKeys.projectsSectionTitle),
                       sectionKey: ref.watch(projectSectionKeyProvider),
                     ),
-                    gapH80,
+                    gapH40,
                     MyDrawerButton(
                       title: 'Blog',
                       sectionKey: ref.watch(projectSectionKeyProvider),
