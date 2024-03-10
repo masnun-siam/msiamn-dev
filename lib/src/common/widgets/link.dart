@@ -3,10 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/src/constants/sizes.dart';
 import 'package:portfolio/src/localization/generated/locale_keys.g.dart';
-
 import 'package:url_launcher/url_launcher.dart';
 
 class Link extends ConsumerStatefulWidget {
+  final String url;
+
+  final String? displayLink;
+  final bool displayLeadingIcon;
+  final bool underlined;
+  final Color? hoverColor;
   const Link({
     super.key,
     required this.url,
@@ -16,26 +21,12 @@ class Link extends ConsumerStatefulWidget {
     this.hoverColor,
   });
 
-  final String url;
-  final String? displayLink;
-  final bool displayLeadingIcon;
-  final bool underlined;
-  final Color? hoverColor;
-
   @override
   ConsumerState<Link> createState() => _LinksState();
 }
 
 class _LinksState extends ConsumerState<Link> {
   TextStyle? _linkStyle;
-
-  @override
-  void didChangeDependencies() {
-    _linkStyle = TextStyle(
-      decoration: widget.underlined ? TextDecoration.underline : null,
-    );
-    super.didChangeDependencies();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,6 +54,7 @@ class _LinksState extends ConsumerState<Link> {
             final snackBar = SnackBar(
               content: Text("${tr(LocaleKeys.openUrlError)} ${widget.url}"),
             );
+            // ignore: use_build_context_synchronously
             ScaffoldMessenger.of(context).showSnackBar(snackBar);
           }
         },
@@ -89,5 +81,13 @@ class _LinksState extends ConsumerState<Link> {
         ),
       ),
     );
+  }
+
+  @override
+  void didChangeDependencies() {
+    _linkStyle = TextStyle(
+      decoration: widget.underlined ? TextDecoration.underline : null,
+    );
+    super.didChangeDependencies();
   }
 }

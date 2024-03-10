@@ -61,6 +61,7 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
             "${tr(LocaleKeys.openUrlError)} ${widget.project.url}",
           ),
         );
+        // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
       }
     }
