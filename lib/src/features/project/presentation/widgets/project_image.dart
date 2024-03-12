@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/src/features/project/domain/project.dart';
@@ -90,17 +91,19 @@ class ProjectImage extends ConsumerWidget {
   Widget _buildScreenshotImage(BuildContext context) {
     final screenshotUrl = project.screenshotUrl;
     if (screenshotUrl == null) return const Icon(Icons.code);
-    return Image.network(
-      screenshotUrl,
+    return CachedNetworkImage(
+      imageUrl: screenshotUrl,
       fit: BoxFit.cover,
-      cacheWidth: 1920,
-      loadingBuilder: (context, child, loadingProgress) {
-        if (loadingProgress != null) {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
-        }
-        return child;
+      // width: 1920,
+      placeholder: (context, url) => const Center(
+        child: CircularProgressIndicator(),
+      ),
+      errorWidget: (context, url, error) {
+        debugPrint(error.toString());
+        return Image.network(
+        url,
+        fit: BoxFit.cover,
+      );
       },
     );
   }
