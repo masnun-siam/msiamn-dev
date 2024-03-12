@@ -22,13 +22,6 @@
       "iconCodePoint": "0xf0e0",
       "iconFontFamily": "FontAwesomeSolid",
       "iconFontPackage": "font_awesome_flutter"
-    },
-    {
-      "tooltip": "+880 1747 705862",
-      "url": "tel:+8801747705862",
-      "iconCodePoint": "0xf095",
-      "iconFontFamily": "FontAwesomeSolid",
-      "iconFontPackage": "font_awesome_flutter"
     }
   ],
   "resumes": [
