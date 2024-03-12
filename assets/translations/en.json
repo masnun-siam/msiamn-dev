@@ -74,6 +74,7 @@
         "Web Scraping",
         "Stripe",
         "Pusher",
+        "MySQL",
         "SQLite",
         "BrainTree",
         "Solidity",
@@ -118,13 +119,43 @@
       ]
     },
     {
-      "name": "Dosh Eats",
+      "name": "T-Ranz",
+      "description": "T-Ranz is a car rental platform. It has an admin panel, admin app, customer website and customer app. I've personally worked on the Customer App and Admin App. Both apps are build with Flutter. Both apps have a user-friendly interface with a robust performance. The Admin App is still in development stage.",
+      "url": "https://app.t-ranz.com.au/",
+      "iconCodePoint": "0xf09b",
+      "iconFontFamily": "FontAwesomeBrands",
+      "iconFontPackage": "font_awesome_flutter",
+      "screenshotUrl": "https://binary-fusion.com/frontend/assets/img/portfolio/t-ranz-portfolio-bg.jpg",
+      "technologies": ["Flutter", "PHP", "Laravel", "MySQL"],
+      "links": [
+        {
+          "url": "https://play.google.com/store/apps/developer?id=T-Ranz+Rentals",
+          "display": "PlayStore Link"
+        },
+        {
+          "url": "https://apps.apple.com/us/developer/t-ranz/id1704652972",
+          "display": "AppStore Link"
+        }
+      ]
+    },
+    {
+      "name": "Yum2Go",
       "description": "A Food delivery app built with Flutter and Firebase. It supports multiple restaurants, and features a cart system, order tracking, and a user-friendly interface. It comes with 3 apps: one for the customer, one for the restaurant, and one for the delivery person.",
-      "url": "https://dosheats.com/apps/",
+      "url": "https://yum2go.com/",
       "iconCodePoint": "0xf09b",
       "iconFontFamily": "FontAwesomeBrands",
       "iconFontPackage": "font_awesome_flutter",
       "screenshotUrl": "https://raw.githubusercontent.com/masnun-siam/msiamn-dev/main/assets/screenshots/project1.jpg",
+      "links": [
+        {
+          "url": "https://play.google.com/store/apps/developer?id=YUM2GO",
+          "display": "PlayStore Link"
+        },
+        {
+          "url": "https://apps.apple.com/us/developer/doshngo/id1712258632",
+          "display": "AppStore Link"
+        }
+      ],
       "technologies": ["Flutter", "Firebase", "Stripe", "Push Notification"]
     },
     {

@@ -47,3 +47,7 @@ flutter:
   assets:
     - assets/images/
     - assets/translations/
+
+hooks:
+  postget:
+      - sh ./generate_language.sh
