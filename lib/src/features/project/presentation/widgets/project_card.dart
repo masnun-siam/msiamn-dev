@@ -31,9 +31,11 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
       child: GestureDetector(
         onLongPress: _scaleUp,
         onLongPressUp: _scaleDown,
-        child: Material(
-          color: Theme.of(context).colorScheme.primary,
-          borderRadius: BorderRadius.circular(20),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.primary,
+            borderRadius: BorderRadius.circular(20),
+          ),
           child: InkWell(
             onTap: _onTap,
             borderRadius: BorderRadius.circular(20),

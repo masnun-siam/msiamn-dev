@@ -102,6 +102,22 @@
       ]
     },
     {
+      "name": "Clippy",
+      "description": "It's a url shortener website. It has some unique features like custom url, password protection, and expiration date. It's built with Flutter, Laravel and MySQL. It's fully responsive and gives a user-friendly interface.",
+      "url": "https://clippy.msiamn.dev",
+      "iconCodePoint": "0xf09b",
+      "iconFontFamily": "FontAwesomeBrands",
+      "iconFontPackage": "font_awesome_flutter",
+      "screenshotUrl": "https://raw.githubusercontent.com/masnun-siam/clippy/main/public/assets/images/screenshot-1.png",
+      "technologies": ["Flutter", "PHP", "Laravel", "MySQL"],
+      "links": [
+        {
+          "url": "https://github.com/masnun-siam/clippy",
+          "display": "Backend Source Code"
+        }
+      ]
+    },
+    {
       "name": "Dosh Eats",
       "description": "A Food delivery app built with Flutter and Firebase. It supports multiple restaurants, and features a cart system, order tracking, and a user-friendly interface. It comes with 3 apps: one for the customer, one for the restaurant, and one for the delivery person.",
       "url": "https://dosheats.com/apps/",
