@@ -33,8 +33,10 @@ jobs:
         run: flutter pub get
       - name: Generate Files
         run: dart run build_runner build --delete-conflicting-outputs
-      - name: Generate Language Files
-        run: sh ./generate_language.sh
+      - name: Generate Language File Keys
+        run: dart run easy_localization:generate -S assets/translations -f keys -O lib/src/localization/generated -o locale_keys.g.dart
+      - name: Generate Language File Jsons
+        run: dart run easy_localization:generate -S assets/translations -f json -O lib/src/localization/generated -o locale_json.g.dart
       - name: Start Web Release Build
         run: flutter build web --web-renderer canvaskit --no-tree-shake-icons --release
       - name: Upload Web Build Files
