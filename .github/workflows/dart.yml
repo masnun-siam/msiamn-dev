@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
       - name: Start Web Release Build
-        run: flutter build web --web-renderer canvaskit --no-tree-shake-iconstmux  --release
+        run: flutter build web --web-renderer canvaskit --no-tree-shake-icons --release
       - name: Upload Web Build Files
         uses: actions/upload-artifact@v2
         with:
