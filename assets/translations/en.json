@@ -90,7 +90,7 @@
       "iconFontFamily": "FontAwesomeBrands",
       "iconFontPackage": "font_awesome_flutter",
       "screenshotUrl": "https://raw.githubusercontent.com/masnun-siam/msiamn-dev/main/assets/screenshots/screenshot.jpg",
-      "technologies": ["Flutter", "Dart", "Firebase"],
+      "technologies": ["Flutter", "Dart"],
       "links": [
         {
           "url": "https://brittanychiang.com",
