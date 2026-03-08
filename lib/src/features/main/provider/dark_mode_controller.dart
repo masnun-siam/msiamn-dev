@@ -14,6 +14,6 @@ class DarkMode extends _$DarkMode {
   }
 
   Future<void> updateTheme() async {
-    await ref.watch(brightnessControllerProvider.notifier).updateBrightness();
+    await ref.read(brightnessControllerProvider.notifier).updateBrightness();
   }
 }

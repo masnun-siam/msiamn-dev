@@ -43,7 +43,7 @@ class BrightnessController extends _$BrightnessController {
   }
 
   Future<void> _setBrightness(Brightness brightness) async {
-    ref.watch(sharedPreferencesProvider).whenData((sharedPreferences) async {
+    ref.read(sharedPreferencesProvider).whenData((sharedPreferences) async {
       await sharedPreferences.setString(brightnessKey, brightness.name);
     });
   }
