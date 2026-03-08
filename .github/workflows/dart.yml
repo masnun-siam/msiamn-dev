@@ -38,7 +38,7 @@ jobs:
       - name: Generate Language File Jsons
         run: dart run easy_localization:generate -S assets/translations -f json -O lib/src/localization/generated -o locale_json.g.dart
       - name: Start Web Release Build
-        run: flutter build web --release
+        run: flutter build web --no-tree-shake-icons --release
       - name: Upload Web Build Files
         uses: actions/upload-artifact@v4
         with:
