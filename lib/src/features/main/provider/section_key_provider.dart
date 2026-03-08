@@ -4,21 +4,21 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'section_key_provider.g.dart';
 
 @riverpod
-GlobalKey homeSectionKey(HomeSectionKeyRef ref) {
+GlobalKey homeSectionKey(Ref ref) {
   return GlobalKey();
 }
 
 @riverpod
-GlobalKey aboutSectionKey(AboutSectionKeyRef ref) {
+GlobalKey aboutSectionKey(Ref ref) {
   return GlobalKey();
 }
 
 @riverpod
-GlobalKey experienceSectionKey(ExperienceSectionKeyRef ref) {
+GlobalKey experienceSectionKey(Ref ref) {
   return GlobalKey();
 }
 
 @riverpod
-GlobalKey projectSectionKey(ProjectSectionKeyRef ref) {
+GlobalKey projectSectionKey(Ref ref) {
   return GlobalKey();
 }
