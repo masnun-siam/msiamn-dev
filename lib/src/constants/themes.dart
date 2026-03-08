@@ -67,16 +67,12 @@ final darkTheme = FlexThemeData.dark(
   ),
   visualDensity: FlexColorScheme.comfortablePlatformDensity,
   useMaterial3: true,
-  swapLegacyOnMaterial3: true,
   // To use the Playground font, add GoogleFonts package and uncomment
   // fontFamily: GoogleFonts.notoSans().fontFamily,
   fontFamily: GoogleFonts.nunito().fontFamily,
 );
 
-// Made for FlexColorScheme version 7.0.0. Make sure you
-// use same or higher package version, but still same major version.
-// If you use a lower version, some properties may not be supported.
-// In that case remove them after copying this theme to your app.
+// Theme configured for FlexColorScheme version 8.x.
 
 final lightTheme = FlexThemeData.light(
   colors: const FlexSchemeColor(
@@ -143,7 +139,6 @@ final lightTheme = FlexThemeData.light(
   ),
   visualDensity: FlexColorScheme.comfortablePlatformDensity,
   useMaterial3: true,
-  swapLegacyOnMaterial3: true,
   // To use the playground font, add GoogleFonts package and uncomment
   // fontFamily: GoogleFonts.notoSans().fontFamily,
   fontFamily: GoogleFonts.nunito().fontFamily,
