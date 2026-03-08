@@ -1,9 +1,9 @@
-import 'package:collection/collection.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/src/constants/sizes.dart';
 import 'package:portfolio/src/features/experience/domain/experience.dart';
+import 'package:portfolio/src/features/experience/presentation/widgets/company_experience_group.dart';
 import 'package:portfolio/src/features/experience/presentation/widgets/experience_card.dart';
 import 'package:portfolio/src/localization/generated/locale_keys.g.dart';
 import 'package:portfolio/src/localization/json_list_translation.dart';
@@ -18,10 +18,19 @@ class ExperienceDesktop extends ConsumerStatefulWidget {
 class _ExperienceDesktopState extends ConsumerState<ExperienceDesktop> {
   @override
   Widget build(BuildContext context) {
-    final jsonExperiences = trList(context.locale, LocaleKeys.experiences);
-    final experiences = jsonExperiences.map((jsonExperience) {
-      return Experience.fromJson(jsonExperience);
-    });
+    final experiences = trList(context.locale, LocaleKeys.experiences)
+        .map(Experience.fromJson)
+        .toList();
+
+    // Group consecutive experiences by company (preserving order)
+    final groups = <List<Experience>>[];
+    for (final exp in experiences) {
+      if (groups.isNotEmpty && groups.last.first.company == exp.company) {
+        groups.last.add(exp);
+      } else {
+        groups.add([exp]);
+      }
+    }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,14 +42,13 @@ class _ExperienceDesktopState extends ConsumerState<ExperienceDesktop> {
             style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
-        ...experiences.mapIndexed((index, experience) {
-          return Column(
-            children: [
-              ExperienceCard(experience: experience),
-              if (index != experiences.length - 1) gapH24,
-            ],
-          );
-        }),
+        for (int i = 0; i < groups.length; i++) ...[
+          if (groups[i].length == 1)
+            ExperienceCard(experience: groups[i].first)
+          else
+            CompanyExperienceGroup(experiences: groups[i]),
+          if (i != groups.length - 1) gapH24,
+        ],
       ],
     );
   }

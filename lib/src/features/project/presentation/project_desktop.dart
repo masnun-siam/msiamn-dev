@@ -21,13 +21,6 @@ class ProjectDesktop extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 12, bottom: 20),
-          child: Text(
-            tr(LocaleKeys.projectsSectionTitle),
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
-        ),
         ...projects.mapIndexed((index, project) {
           return Column(
             children: [
