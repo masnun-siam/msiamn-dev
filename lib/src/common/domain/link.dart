@@ -4,7 +4,7 @@ part 'link.freezed.dart';
 part 'link.g.dart';
 
 @freezed
-class Link with _$Link {
+abstract class Link with _$Link {
   const factory Link({
     String? url,
     String? display,

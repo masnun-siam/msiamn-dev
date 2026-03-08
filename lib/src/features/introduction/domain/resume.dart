@@ -4,7 +4,7 @@ part 'resume.freezed.dart';
 part 'resume.g.dart';
 
 @freezed
-class Resume with _$Resume {
+abstract class Resume with _$Resume {
   const factory Resume({
     String? languageCode,
     String? language,
