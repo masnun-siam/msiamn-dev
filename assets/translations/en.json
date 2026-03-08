@@ -1,6 +1,6 @@
 {
   "name": "Masnun Siam",
-  "description": "Flutter Developer",
+  "description": "Software Engineer",
   "contacts": [
     {
       "tooltip": "LinkedIn",
@@ -24,29 +24,57 @@
       "iconFontPackage": "font_awesome_flutter"
     }
   ],
-  "resumes": [
-    {
-      "languageCode": "en",
-      "url": "https://drive.google.com/file/d/1n8J68p4N2BNV_CsJnzIfzl2Ex-ImNWYC/view?usp=drive_link"
-    }
-  ],
-  "aboutDescription": "Hello, I'm Masnun Siam – a dedicated full-time Flutter developer with a rich 3-year experience under my belt. I've had the privilege of working on approximately 40 different applications, ranging from crafting new ones to refining existing ones. Learning is my passion, and I'm constantly seeking opportunities to expand my skills and knowledge within the Flutter ecosystem. It's an exciting journey, and I'm here to make the most out of it.",
+  "resumes": [],
+  "aboutDescription": "I'm a software engineer specializing in backend development with Laravel and PHP, bringing a unique perspective from 4+ years of mobile development experience. I build robust server-side solutions, RESTful APIs, and scalable web applications. My journey from Flutter development to backend engineering gives me comprehensive understanding of the full development lifecycle — having been on the consuming side of APIs, I design backend architectures that are truly developer-friendly and create seamless frontend-backend integrations. I have hands-on experience leading development teams, conducting code reviews, and ensuring best practices.",
   "experiences": [
     {
-      "job": "Flutter Developer",
-      "company": "Binary Fusion",
-      "description": "At Binary Fusion, I held a significant role in maintaining and optimizing large-scale applications, collaborating seamlessly within a team. As a key contributor, I played a vital part in ensuring the smooth operation of intricate cross-platform apps, including the implementation of critical Firebase services for enhanced functionality. Moreover, I successfully managed the deployment of these applications to both the App Store and Google Play Store, highlighting my capacity to see projects through to completion. This experience underscored my aptitude for teamwork and showcased my expertise in efficiently managing and enhancing complex app ecosystems.",
+      "job": "Junior Software Engineer",
+      "company": "BluBird Interactive Ltd.",
+      "description": "Working as a backend-focused software engineer, building robust server-side solutions, RESTful APIs, and scalable web applications using Laravel and PHP. Collaborating with cross-functional teams to deliver high-quality software that meets business requirements.",
       "isPresent": true,
+      "startYear": 2024,
+      "startMonth": 10,
+      "technologies": [
+        "PHP",
+        "Laravel",
+        "MySQL",
+        "RESTful API",
+        "Git"
+      ]
+    },
+    {
+      "job": "Senior Software Engineer (Mobile)",
+      "company": "Binary Fusion",
+      "description": "Led a small, diverse team of junior developers, successfully delivering stable client projects. Contributed to backend development using PHP and Laravel, and reviewed code to ensure quality and adherence to best practices.",
+      "startYear": 2024,
+      "startMonth": 3,
+      "endYear": 2024,
+      "endMonth": 10,
+      "technologies": [
+        "Flutter",
+        "Dart",
+        "PHP",
+        "Laravel",
+        "Firebase",
+        "MySQL",
+        "Git",
+        "Slack"
+      ]
+    },
+    {
+      "job": "Software Engineer (Mobile)",
+      "company": "Binary Fusion",
+      "description": "Utilized native channels in Flutter apps to create seamless integrations with platform-specific components. Implemented complex designs with CustomPaint in Flutter apps. Deployed and published apps on Google Play Store and Apple App Store. Integrated payment services like In-App-Purchase and Stripe.",
       "startYear": 2023,
-      "endYear": 2023,
+      "startMonth": 3,
+      "endYear": 2024,
+      "endMonth": 2,
       "technologies": [
         "Flutter",
         "Dart",
         "Firebase",
-        "PHP",
-        "Laravel",
         "Stripe",
-        "Pusher",
+        "In-App-Purchase",
         "MySQL",
         "SQLite",
         "Git",
@@ -57,7 +85,7 @@
     {
       "job": "Junior Flutter Developer",
       "company": "Roxarth Manhattan",
-      "description": "As the sole app developer at Roxarth Manhattan, I played a pivotal role in the creation and maintenance of cross-platform applications. My responsibilities encompassed UI/UX design, REST API integration, deployment on app stores, and even venturing into blockchain and Ethereum network exploration for decentralized applications. This experience underscored my proficiency in delivering end-to-end solutions and my ability to adapt and excel in a dynamic environment.",
+      "description": "Developed and maintained cross-platform applications for various clients using Flutter and Dart. Used state management techniques such as Provider, BLoC, Riverpod, and GetX. Integrated apps with REST APIs, Firebase, and cloud services. Applied TDD, DDD, MVC, and MVVM models for code quality. Explored blockchain and Ethereum networks to develop decentralized applications using Solidity.",
       "startYear": 2020,
       "startMonth": 11,
       "endYear": 2023,
@@ -81,90 +109,7 @@
     }
   ],
   "present": "Present",
-  "projects": [
-    {
-      "name": "Portfolio",
-      "description": "Yes, it's THIS portfolio! \nThis project follows a Riverpod-based Architecture, using a feature-first approach for its structure. It is fully responsive, and supports multiple themes.",
-      "url": "https://github.com/masnun-siam/msiamn-dev#readme",
-      "iconCodePoint": "0xf09b",
-      "iconFontFamily": "FontAwesomeBrands",
-      "iconFontPackage": "font_awesome_flutter",
-      "screenshotUrl": "https://raw.githubusercontent.com/masnun-siam/msiamn-dev/main/assets/screenshots/screenshot.jpg",
-      "technologies": ["Flutter", "Dart"],
-      "links": [
-        {
-          "url": "https://brittanychiang.com",
-          "display": "Design inspired by Brittany Chiang"
-        }
-      ]
-    },
-    {
-      "name": "Clippy",
-      "description": "It's a url shortener website. It has some unique features like custom url, password protection, and expiration date. It's built with Flutter, Laravel and MySQL. It's fully responsive and gives a user-friendly interface.",
-      "url": "https://clippy.msiamn.dev",
-      "iconCodePoint": "0xf09b",
-      "iconFontFamily": "FontAwesomeBrands",
-      "iconFontPackage": "font_awesome_flutter",
-      "screenshotUrl": "https://raw.githubusercontent.com/masnun-siam/clippy/main/public/assets/images/screenshot-1.png",
-      "technologies": ["Flutter", "PHP", "Laravel", "MySQL"],
-      "links": [
-        {
-          "url": "https://github.com/masnun-siam/clippy",
-          "display": "Backend Source Code"
-        }
-      ]
-    },
-    {
-      "name": "T-Ranz",
-      "description": "T-Ranz is a car rental platform. It has an admin panel, admin app, customer website and customer app. I've personally worked on the Customer App and Admin App. Both apps are build with Flutter. Both apps have a user-friendly interface with a robust performance. The Admin App is still in development stage.",
-      "url": "https://app.t-ranz.com.au/",
-      "iconCodePoint": "0xf09b",
-      "iconFontFamily": "FontAwesomeBrands",
-      "iconFontPackage": "font_awesome_flutter",
-      "screenshotUrl": "https://raw.githubusercontent.com/masnun-siam/msiamn-dev/develop/assets/screenshots/project3.jpg",
-      "technologies": ["Flutter", "PHP", "Laravel", "MySQL"],
-      "links": [
-        {
-          "url": "https://play.google.com/store/apps/developer?id=T-Ranz+Rentals",
-          "display": "PlayStore Link"
-        },
-        {
-          "url": "https://apps.apple.com/us/developer/t-ranz/id1704652972",
-          "display": "AppStore Link"
-        }
-      ]
-    },
-    {
-      "name": "Yum2Go",
-      "description": "A Food delivery app built with Flutter and Firebase. It supports multiple restaurants, and features a cart system, order tracking, and a user-friendly interface. It comes with 3 apps: one for the customer, one for the restaurant, and one for the delivery person.",
-      "url": "https://yum2go.com/",
-      "iconCodePoint": "0xf09b",
-      "iconFontFamily": "FontAwesomeBrands",
-      "iconFontPackage": "font_awesome_flutter",
-      "screenshotUrl": "https://raw.githubusercontent.com/masnun-siam/msiamn-dev/main/assets/screenshots/project1.jpg",
-      "links": [
-        {
-          "url": "https://play.google.com/store/apps/developer?id=YUM2GO",
-          "display": "PlayStore Link"
-        },
-        {
-          "url": "https://apps.apple.com/us/developer/doshngo/id1712258632",
-          "display": "AppStore Link"
-        }
-      ],
-      "technologies": ["Flutter", "Firebase", "Stripe", "Push Notification"]
-    },
-    {
-      "name": "Dosh Network",
-      "description": "This is a video streaming app built with Flutter. It works with API provided from a wordpress website. It supports multiple categories, and features a user-friendly interface.",
-      "url": "https://play.google.com/store/apps/details?id=com.dosh.network",
-      "iconCodePoint": "0xf09b",
-      "iconFontFamily": "FontAwesomeBrands",
-      "iconFontPackage": "font_awesome_flutter",
-      "screenshotUrl": "https://raw.githubusercontent.com/masnun-siam/msiamn-dev/main/assets/screenshots/project2.jpg",
-      "technologies": ["Flutter", "Dart", "API Integration"]
-    }
-  ],
+  "projects": [],
   "languages": [
     {
       "code": "en",
