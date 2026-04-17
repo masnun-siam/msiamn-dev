@@ -161,7 +161,7 @@ class _ExperienceCardState extends ConsumerState<ExperienceCard> {
     } else {
       endDate = endMonth.isEmpty ? endYear : "$endMonth $endYear";
     }
-    if (startDate == null || endDate == null) return const Text("");
+    if (startDate == null || endDate == null) return const SizedBox.shrink();
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
       decoration: BoxDecoration(
