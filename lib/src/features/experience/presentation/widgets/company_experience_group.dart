@@ -10,57 +10,102 @@ import 'package:portfolio/src/localization/localized_date_extension.dart';
 import 'package:portfolio/src/utils/string_extension.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class CompanyExperienceGroup extends ConsumerWidget {
+class CompanyExperienceGroup extends ConsumerStatefulWidget {
   const CompanyExperienceGroup({super.key, required this.experiences});
 
   final List<Experience> experiences;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final company = experiences.first.company ?? '';
-    final companyUrl = experiences.first.url;
+  ConsumerState<CompanyExperienceGroup> createState() =>
+      _CompanyExperienceGroupState();
+}
 
-    return Material(
-      color: Theme.of(context).colorScheme.primary,
-      borderRadius: BorderRadius.circular(20),
-      child: InkWell(
-        onTap: companyUrl != null ? () => _onTapCompany(context, companyUrl) : null,
-        borderRadius: BorderRadius.circular(20),
-        hoverColor: Theme.of(context).colorScheme.tertiary.withAlpha(40),
-        splashColor: Theme.of(context).colorScheme.tertiary.withAlpha(30),
-        highlightColor: Theme.of(context).colorScheme.tertiary.withAlpha(20),
-        child: MouseRegion(
-          cursor: companyUrl != null ? SystemMouseCursors.click : SystemMouseCursors.basic,
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  company,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium
-                      ?.copyWith(fontWeight: FontWeight.bold),
+class _CompanyExperienceGroupState
+    extends ConsumerState<CompanyExperienceGroup> {
+  bool _isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final company = widget.experiences.first.company ?? '';
+    final companyUrl = widget.experiences.first.url;
+
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 250),
+        curve: Curves.easeOut,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: _isHovered
+              ? [
+                  BoxShadow(
+                    color: Theme.of(context)
+                        .colorScheme
+                        .tertiary
+                        .withAlpha(60),
+                    blurRadius: 24,
+                    spreadRadius: 2,
+                    offset: const Offset(0, 4),
+                  ),
+                ]
+              : [
+                  BoxShadow(
+                    color: Colors.black.withAlpha(20),
+                    blurRadius: 8,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+        ),
+        child: Material(
+          color: Theme.of(context).colorScheme.primary,
+          borderRadius: BorderRadius.circular(20),
+          child: InkWell(
+            onTap:
+                companyUrl != null ? () => _onTapCompany(context, companyUrl) : null,
+            borderRadius: BorderRadius.circular(20),
+            hoverColor: Theme.of(context).colorScheme.tertiary.withAlpha(40),
+            splashColor: Theme.of(context).colorScheme.tertiary.withAlpha(30),
+            highlightColor: Theme.of(context).colorScheme.tertiary.withAlpha(20),
+            child: MouseRegion(
+              cursor: companyUrl != null
+                  ? SystemMouseCursors.click
+                  : SystemMouseCursors.basic,
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      company,
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleMedium
+                          ?.copyWith(fontWeight: FontWeight.bold),
+                    ),
+                    gapH12,
+                    ...widget.experiences.asMap().entries.map((entry) {
+                      final index = entry.key;
+                      final experience = entry.value;
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          if (index > 0) ...[
+                            Divider(
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .outline
+                                  .withAlpha(60),
+                            ),
+                            gapH4,
+                          ],
+                          _RoleEntry(experience: experience),
+                        ],
+                      );
+                    }),
+                  ],
                 ),
-                gapH12,
-                ...experiences.asMap().entries.map((entry) {
-                  final index = entry.key;
-                  final experience = entry.value;
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      if (index > 0) ...[
-                        Divider(
-                          color: Theme.of(context).colorScheme.outline.withAlpha(60),
-                        ),
-                        gapH4,
-                      ],
-                      _RoleEntry(experience: experience),
-                    ],
-                  );
-                }),
-              ],
+              ),
             ),
           ),
         ),
@@ -102,8 +147,7 @@ class _RoleEntry extends ConsumerWidget {
               ),
             ),
             gapW24,
-            if (!Responsive.isMobile(context))
-              _buildDateText(context),
+            if (!Responsive.isMobile(context)) _buildDateText(context),
           ],
         ),
         if (Responsive.isMobile(context)) ...[
@@ -128,7 +172,8 @@ class _RoleEntry extends ConsumerWidget {
     final locale = context.locale;
     final startMonth = experience.startMonth?.localizedMonth(locale) ?? '';
     final startYear = experience.startYear?.localizedYear(locale);
-    final startDate = startMonth.isEmpty ? startYear : '$startMonth $startYear';
+    final startDate =
+        startMonth.isEmpty ? startYear : '$startMonth $startYear';
     final endMonth = experience.endMonth?.localizedMonth(locale) ?? '';
     final endYear = experience.endYear?.localizedYear(locale);
     final String? endDate;
@@ -138,9 +183,20 @@ class _RoleEntry extends ConsumerWidget {
       endDate = endMonth.isEmpty ? endYear : '$endMonth $endYear';
     }
     if (startDate == null || endDate == null) return const SizedBox.shrink();
-    return Text(
-      '${startDate.capitalize()} - ${endDate.capitalize()}',
-      style: Theme.of(context).textTheme.bodyMedium,
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.secondary.withAlpha(80),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: Theme.of(context).colorScheme.tertiary.withAlpha(60),
+          width: 1,
+        ),
+      ),
+      child: Text(
+        '${startDate.capitalize()} — ${endDate.capitalize()}',
+        style: Theme.of(context).textTheme.bodySmall,
+      ),
     );
   }
 

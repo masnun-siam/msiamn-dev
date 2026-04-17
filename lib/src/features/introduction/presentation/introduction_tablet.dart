@@ -10,11 +10,45 @@ import 'package:portfolio/src/features/introduction/presentation/widgets/resume_
 import 'package:portfolio/src/localization/generated/locale_keys.g.dart';
 import 'package:portfolio/src/localization/json_list_translation.dart';
 
-class IntroductionTablet extends ConsumerWidget {
+class IntroductionTablet extends ConsumerStatefulWidget {
   const IntroductionTablet({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<IntroductionTablet> createState() => _IntroductionTabletState();
+}
+
+class _IntroductionTabletState extends ConsumerState<IntroductionTablet>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _fadeAnimation;
+  late Animation<Offset> _slideAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 900),
+    );
+    _fadeAnimation = CurvedAnimation(
+      parent: _controller,
+      curve: Curves.easeOut,
+    );
+    _slideAnimation = Tween<Offset>(
+      begin: const Offset(0, 0.08),
+      end: Offset.zero,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final jsonResumes = trList(context.locale, LocaleKeys.resumes);
     final resumes = jsonResumes.map((jsonResume) {
       return Resume.fromJson(jsonResume);
@@ -23,28 +57,34 @@ class IntroductionTablet extends ConsumerWidget {
     final contacts = jsonContacts.map((jsonContact) {
       return Contact.fromJson(jsonContact);
     });
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          tr(LocaleKeys.name),
-          style: Theme.of(context).textTheme.displayLarge,
-        ),
-        gapH4,
-        Row(
-          mainAxisSize: MainAxisSize.min,
+    return FadeTransition(
+      opacity: _fadeAnimation,
+      child: SlideTransition(
+        position: _slideAnimation,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "${tr(LocaleKeys.description)} ",
-              style: Theme.of(context).textTheme.titleLarge,
+              tr(LocaleKeys.name),
+              style: Theme.of(context).textTheme.displayLarge,
             ),
-            const MagicIcon(),
+            gapH4,
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  "${tr(LocaleKeys.description)} ",
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                const MagicIcon(),
+              ],
+            ),
+            _buildResumeButton(ref, resumes: resumes.toList()),
+            gapH8,
+            ContactBar(contacts: contacts.toList()),
           ],
         ),
-        _buildResumeButton(ref, resumes: resumes.toList()),
-        gapH8,
-        ContactBar(contacts: contacts.toList()),
-      ],
+      ),
     );
   }
 
