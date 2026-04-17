@@ -25,6 +25,8 @@ class _ExperienceCardState extends ConsumerState<ExperienceCard> {
 
   @override
   Widget build(BuildContext context) {
+    final url = widget.experience.url;
+    final isTappable = url != null;
     return MouseRegion(
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
@@ -57,13 +59,21 @@ class _ExperienceCardState extends ConsumerState<ExperienceCard> {
           color: Theme.of(context).colorScheme.primary,
           borderRadius: BorderRadius.circular(20),
           child: InkWell(
-            onTap: () => _onTap(context),
+            onTap: isTappable ? () => _onTap(context) : null,
             borderRadius: BorderRadius.circular(20),
-            hoverColor: Theme.of(context).colorScheme.tertiary.withAlpha(40),
-            splashColor: Theme.of(context).colorScheme.tertiary.withAlpha(30),
-            highlightColor: Theme.of(context).colorScheme.tertiary.withAlpha(20),
+            hoverColor: isTappable
+                ? Theme.of(context).colorScheme.tertiary.withAlpha(40)
+                : Colors.transparent,
+            splashColor: isTappable
+                ? Theme.of(context).colorScheme.tertiary.withAlpha(30)
+                : Colors.transparent,
+            highlightColor: isTappable
+                ? Theme.of(context).colorScheme.tertiary.withAlpha(20)
+                : Colors.transparent,
             child: MouseRegion(
-              cursor: SystemMouseCursors.basic,
+              cursor: isTappable
+                  ? SystemMouseCursors.click
+                  : SystemMouseCursors.basic,
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(

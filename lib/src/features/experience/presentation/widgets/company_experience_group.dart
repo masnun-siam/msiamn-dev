@@ -37,7 +37,7 @@ class _CompanyExperienceGroupState
         curve: Curves.easeOut,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          boxShadow: _isHovered
+          boxShadow: (_isHovered && companyUrl != null)
               ? [
                   BoxShadow(
                     color: Theme.of(context)
