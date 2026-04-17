@@ -2,6 +2,7 @@ import 'package:collection/collection.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:portfolio/src/common/widgets/section_header.dart';
 import 'package:portfolio/src/constants/sizes.dart';
 import 'package:portfolio/src/features/project/domain/project.dart';
 import 'package:portfolio/src/features/project/presentation/widgets/project_card.dart';
@@ -21,6 +22,10 @@ class ProjectDesktop extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 12, bottom: 20),
+          child: SectionHeader(title: tr(LocaleKeys.projectsSectionTitle)),
+        ),
         ...projects.mapIndexed((index, project) {
           return Column(
             children: [

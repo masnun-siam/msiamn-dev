@@ -9,55 +9,92 @@ import 'package:portfolio/src/localization/generated/locale_keys.g.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
-class ResumeButton extends ConsumerWidget {
+class ResumeButton extends ConsumerStatefulWidget {
   const ResumeButton({super.key, required this.resumes});
 
   final List<Resume> resumes;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return OutlinedButton(
-      style: OutlinedButton.styleFrom(
-        side: BorderSide(
-          width: 2,
-          color: Theme.of(context).colorScheme.tertiary,
+  ConsumerState<ResumeButton> createState() => _ResumeButtonState();
+}
+
+class _ResumeButtonState extends ConsumerState<ResumeButton> {
+  bool _isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final tertiary = Theme.of(context).colorScheme.tertiary;
+    final inverseSurface = Theme.of(context).colorScheme.inverseSurface;
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 250),
+        curve: Curves.easeOut,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(40),
+          boxShadow: _isHovered
+              ? [
+                  BoxShadow(
+                    color: tertiary.withAlpha(80),
+                    blurRadius: 20,
+                    spreadRadius: 2,
+                    offset: const Offset(0, 4),
+                  ),
+                ]
+              : [],
         ),
-        elevation: 16,
-        shape: const StadiumBorder(),
-        padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 12),
-      ),
-      onPressed: () => _onPressed(context, ref),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        textBaseline: TextBaseline.alphabetic,
-        children: [
-          Icon(
-            FontAwesomeIcons.filePdf,
-            color: Theme.of(context).colorScheme.inverseSurface,
+        child: OutlinedButton(
+          style: OutlinedButton.styleFrom(
+            side: BorderSide(
+              width: 2,
+              color: tertiary,
+            ),
+            backgroundColor:
+                _isHovered ? tertiary.withAlpha(30) : Colors.transparent,
+            elevation: 0,
+            shape: const StadiumBorder(),
+            padding: const EdgeInsets.symmetric(horizontal: 36, vertical: 12),
           ),
-          gapW12,
-          Text(
-            tr(LocaleKeys.resume),
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium
-                ?.copyWith(fontWeight: FontWeight.bold),
+          onPressed: () => _onPressed(context, ref),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            textBaseline: TextBaseline.alphabetic,
+            children: [
+              AnimatedRotation(
+                turns: _isHovered ? 0.05 : 0,
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeOut,
+                child: Icon(
+                  FontAwesomeIcons.filePdf,
+                  color: inverseSurface,
+                ),
+              ),
+              gapW12,
+              Text(
+                tr(LocaleKeys.resume),
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium
+                    ?.copyWith(fontWeight: FontWeight.bold),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
 
   Future<void> _onPressed(BuildContext context, WidgetRef ref) async {
-    if (resumes.length > 1) {
+    if (widget.resumes.length > 1) {
       showDialog(
         context: context,
-        builder: (context) => ResumeLanguageDialog(resumes: resumes),
+        builder: (context) => ResumeLanguageDialog(resumes: widget.resumes),
       );
-    } else if (resumes.length == 1) {
-      final resumeFirstUrl = resumes.first.url;
+    } else if (widget.resumes.length == 1) {
+      final resumeFirstUrl = widget.resumes.first.url;
       if (resumeFirstUrl == null) {
         _showSnackBarResumeError(context);
         return;

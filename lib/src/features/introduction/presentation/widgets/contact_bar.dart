@@ -22,30 +22,10 @@ class ContactBar extends ConsumerWidget {
         if (contactTooltip == null || contactUrl == null) {
           return const SizedBox.shrink();
         }
-        return IconButton(
-          tooltip: contact.tooltip,
-          onPressed: () async {
-            if (!await launchUrl(Uri.parse(contactUrl))) {
-              if (context.mounted) {
-                final snackBar = SnackBar(
-                  content: Text(
-                    "${tr(LocaleKeys.openUrlError)} $contactUrl",
-                  ),
-                );
-                ScaffoldMessenger.of(context).showSnackBar(snackBar);
-              }
-            }
-          },
-          icon: iconData != null
-              ? Icon(iconData)
-              : Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Icon(Icons.link),
-                    const SizedBox(width: 4),
-                    Text(contactTooltip),
-                  ],
-                ),
+        return _HoverableContactIcon(
+          tooltip: contactTooltip,
+          url: contactUrl,
+          iconData: iconData,
           padding: iconData == null ? null : _fixGithubIconPadding(iconData),
         );
       }).toList(),
@@ -75,5 +55,78 @@ class ContactBar extends ConsumerWidget {
   EdgeInsetsGeometry? _fixGithubIconPadding(IconData iconData) {
     if (iconData != FontAwesomeIcons.discord) return null;
     return const EdgeInsets.only(right: 6);
+  }
+}
+
+class _HoverableContactIcon extends StatefulWidget {
+  const _HoverableContactIcon({
+    required this.tooltip,
+    required this.url,
+    this.iconData,
+    this.padding,
+  });
+
+  final String tooltip;
+  final String url;
+  final IconData? iconData;
+  final EdgeInsetsGeometry? padding;
+
+  @override
+  State<_HoverableContactIcon> createState() => _HoverableContactIconState();
+}
+
+class _HoverableContactIconState extends State<_HoverableContactIcon> {
+  bool _isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      child: AnimatedScale(
+        scale: _isHovered ? 1.25 : 1.0,
+        duration: const Duration(milliseconds: 200),
+        curve: Curves.easeOut,
+        child: Tooltip(
+          message: widget.tooltip,
+          child: IconButton(
+            onPressed: () async {
+              if (!await launchUrl(Uri.parse(widget.url))) {
+                if (context.mounted) {
+                  final snackBar = SnackBar(
+                    content: Text(
+                      "${tr(LocaleKeys.openUrlError)} ${widget.url}",
+                    ),
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                }
+              }
+            },
+            icon: widget.iconData != null
+                ? Icon(
+                    widget.iconData,
+                    color: _isHovered
+                        ? Theme.of(context).colorScheme.inverseSurface
+                        : null,
+                  )
+                : Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.link,
+                        color: _isHovered
+                            ? Theme.of(context).colorScheme.inverseSurface
+                            : null,
+                      ),
+                      const SizedBox(width: 4),
+                      Text(widget.tooltip),
+                    ],
+                  ),
+            padding: widget.padding,
+          ),
+        ),
+      ),
+    );
   }
 }

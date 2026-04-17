@@ -31,10 +31,31 @@ class _ProjectCardState extends ConsumerState<ProjectCard> {
       child: GestureDetector(
         onLongPress: _scaleUp,
         onLongPressUp: _scaleDown,
-        child: Container(
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 250),
+          curve: Curves.easeOut,
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.primary,
             borderRadius: BorderRadius.circular(20),
+            boxShadow: _isHovered
+                ? [
+                    BoxShadow(
+                      color: Theme.of(context)
+                          .colorScheme
+                          .tertiary
+                          .withAlpha(70),
+                      blurRadius: 28,
+                      spreadRadius: 2,
+                      offset: const Offset(0, 6),
+                    ),
+                  ]
+                : [
+                    BoxShadow(
+                      color: Colors.black.withAlpha(20),
+                      blurRadius: 8,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
           ),
           child: InkWell(
             onTap: _onTap,

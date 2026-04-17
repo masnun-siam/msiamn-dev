@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:portfolio/src/common/widgets/section_header.dart';
 import 'package:portfolio/src/constants/sizes.dart';
 import 'package:portfolio/src/features/experience/domain/experience.dart';
 import 'package:portfolio/src/features/experience/presentation/widgets/company_experience_group.dart';
@@ -37,10 +38,7 @@ class _ExperienceDesktopState extends ConsumerState<ExperienceDesktop> {
       children: [
         Padding(
           padding: const EdgeInsets.only(left: 12, bottom: 20),
-          child: Text(
-            tr(LocaleKeys.experienceSectionTitle),
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
+          child: SectionHeader(title: tr(LocaleKeys.experienceSectionTitle)),
         ),
         for (int i = 0; i < groups.length; i++) ...[
           if (groups[i].length == 1)
